@@ -81,7 +81,8 @@ enum {
     SE3_CMD0_FACTORY_INIT = 1,
     SE3_CMD0_ECHO = 2,
 	SE3_CMD0_MIX = 3,
-	SE3_CMD0_BOOT_MODE_RESET = 4
+	SE3_CMD0_BOOT_MODE_RESET = 4,
+	SE3_CMD0_RAND = 5,
 };
 
 /** command flags */

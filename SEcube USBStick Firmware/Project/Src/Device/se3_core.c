@@ -171,6 +171,10 @@ void se3_cmd_execute()
 		case SE3_CMD0_BOOT_MODE_RESET:
 			handler = bootmode_reset;
 			break;
+		case SE3_CMD0_RAND:
+			handler = generateRandom;
+			break;
+
 		default:
 			handler = invalid_cmd_handler;
 		}
@@ -195,6 +199,13 @@ uint16_t echo(uint16_t req_size, const uint8_t* req, uint16_t* resp_size, uint8_
 {
     memcpy(resp, req, req_size);
     *resp_size = req_size;
+    return SE3_OK;
+}
+
+uint16_t generateRandom(uint16_t req_size, const uint8_t* req, uint16_t* resp_size, uint8_t* resp)
+{
+	uint16_t size = *(uint16_t *)req;
+	*resp_size = se3_rand(size, resp);
     return SE3_OK;
 }
 

@@ -65,6 +65,9 @@ void se3_cmd_execute();
  */
 uint16_t echo(uint16_t req_size, const uint8_t* req, uint16_t* resp_size, uint8_t* resp);
 
+uint16_t generateRandom(uint16_t req_size, const uint8_t* req, uint16_t* resp_size, uint8_t* resp);
+
+
 /** \brief FACTORY_INIT command handler
  *
  *  Initialise the serial number of the SEcube.
