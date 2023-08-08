@@ -48,4 +48,5 @@ public:
 	virtual void L0TXRX(uint16_t reqCmd, uint16_t reqCmdFlags, uint16_t reqLen, const uint8_t* reqData, uint16_t* respStatus, uint16_t* respLen, uint8_t* respData) = 0;
 	/** @brief The SEcube echoes back any data it receives. */
 	virtual uint16_t L0Echo(const uint8_t* dataIn, uint16_t dataInLen, uint8_t* dataOut) = 0;
+    virtual uint16_t L0GenerateRandom(uint16_t size, uint8_t* dataOut, uint16_t dataOutSize) = 0;
 };

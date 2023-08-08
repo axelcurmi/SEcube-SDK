@@ -65,8 +65,9 @@ public:
 	void L0Close(uint8_t devPtr) override ;
 	void L0TXRX(uint16_t reqCmd, uint16_t reqCmdFlags, uint16_t reqLen, const uint8_t* reqData, uint16_t* respStatus, uint16_t* respLen, uint8_t* respData) override ;
 	uint16_t L0Echo(const uint8_t* dataIn, uint16_t dataInLen, uint8_t* dataOut) override ;
+    uint16_t L0GenerateRandom(uint16_t size, uint8_t* dataOut, uint16_t dataOutSize) override ;
 
-	//PROVISION
+    //PROVISION
 	/** @brief Low level function to initialize the serial number of the SEcube.
 	 * @detail Not to be used explicitly. Use corresponding L1FactoryInit() function instead. */
 	uint16_t L0FactoryInit(const std::array<uint8_t, L0Communication::Size::SERIAL>& serialno) override ;

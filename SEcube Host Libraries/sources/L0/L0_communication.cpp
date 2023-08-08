@@ -353,3 +353,16 @@ uint16_t L0::L0Echo(const uint8_t* dataIn, uint16_t dataInLen, uint8_t* dataOut)
 	}
 	return respStatus;
 }
+
+uint16_t L0::L0GenerateRandom(const uint16_t size, uint8_t* dataOut, uint16_t dataOutSize) {
+	uint16_t respStatus = 0;
+	L0EchoException echoExc;
+
+	try {
+		L0TXRX(L0Commands::Command::RAND, 0, sizeof(size), (const uint8_t *)&size, &respStatus, &dataOutSize, dataOut);
+	}
+	catch (L0Exception& e) {
+		throw echoExc;
+	}
+	return respStatus;
+}

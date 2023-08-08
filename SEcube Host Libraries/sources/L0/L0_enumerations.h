@@ -129,7 +129,8 @@ namespace L0Commands {
 			FACTORY_INIT = 1,
 			ECHO = 2,
 			L1_CMD0 = 3,
-			SE3_CMD0_BOOT_MODE_RESET = 4
+			SE3_CMD0_BOOT_MODE_RESET = 4,
+            RAND = 5
 		};
 	};
 }
